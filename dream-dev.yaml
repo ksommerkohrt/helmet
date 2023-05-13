@@ -8,10 +8,6 @@ repositories:
     type: git
     url: git@github.com:cognipilot/corti
     version: main
-  cranium/src/dream:
-    type: git
-    url: git@github.com:cognipilot/dream
-    version: main
   electrode/src/electrode:
     type: git
     url: git@github.com:cognipilot/electrode
@@ -84,10 +80,10 @@ repositories:
     type: git
     url: git@github.com:cognipilot/synapse_tinyframe
     version: main
-  gazebo/src/ros_gz:
+  gazebo/src/gz-sim:
     type: git
-    url: git@github.com:rudislabs/ros_gz
-    version: ros2
+    url: git@github.com:gazebosim/gz-sim
+    version: gz-sim7
   tools/src/hcdformat:
     type: git
     url: git@github.com:cognipilot/hcdformat
