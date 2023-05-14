@@ -67,7 +67,7 @@ repositories:
   cranium/src/synapse_msgs:
     type: git
     url: git@github.com:cognipilot/synapse_msgs
-    version: main    
+    version: main
   cranium/src/synapse_protobuf:
     type: git
     url: git@github.com:cognipilot/synapse_protobuf
@@ -80,10 +80,6 @@ repositories:
     type: git
     url: git@github.com:cognipilot/synapse_tinyframe
     version: main
-  gazebo/src/gz-sim:
-    type: git
-    url: git@github.com:gazebosim/gz-sim
-    version: gz-sim7
   tools/src/hcdformat:
     type: git
     url: git@github.com:cognipilot/hcdformat

@@ -3,11 +3,11 @@ VCS_FILE="NOT_SET"
 
 while getopts p:f:b: flag
 do
-    case "${flag}" in
-        p) PULL_BOOL=${OPTARG};;
-        f) VCS_FILE=${OPTARG};;
-	b) BUILD_BOOL=${OPTARG};;
-    esac
+	case "${flag}" in
+		p) PULL_BOOL=${OPTARG};;
+		f) VCS_FILE=${OPTARG};;
+		b) BUILD_BOOL=${OPTARG};;
+	esac
 done
 
 sudo apt-get -y update
@@ -128,11 +128,17 @@ then
 	sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 fi
-
-if ! [ -f /etc/apt/sources.list.d/gazebo-stable.list ]
+if ! [ -f /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg ]
 then
 	sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+fi
+if ! [ -f /etc/apt/sources.list.d/gazebo-stable.list ]
+then
 	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+fi
+if ! [ -f /etc/apt/sources.list.d/gazebo-prerelease.list ]
+then
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-prerelease $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-prerelease.list > /dev/null
 fi
 
 sudo apt-get -y update
@@ -154,6 +160,12 @@ sudo apt-get install --no-install-recommends -y \
 	python3-xdg \
 	python3-xmltodict \
 	qt5dxcb-plugin \
+
+sudo apt-get install --no-install-recommends -y \
+	gz-garden \
+	ros-humble-ros-gzgarden-bridge \
+	ros-humble-ros-gzgarden-image \
+	ros-humble-ros-gzgarden-sim \
 
 pip3 install cyclonedds pycdr2 
 

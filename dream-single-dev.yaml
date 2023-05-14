@@ -72,7 +72,4 @@ repositories:
     type: git
     url: git@github.com:cognipilot/synapse_tinyframe
     version: main
-  cranium/src/ros_gz:
-    type: git
-    url: git@github.com:rudislabs/ros_gz
-    version: ros2
+    
