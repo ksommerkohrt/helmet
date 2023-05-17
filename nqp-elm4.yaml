@@ -36,10 +36,6 @@ repositories:
     type: git
     url: git@github.com:rudislabs/rf2o_laser_odometry
     version: master
-  cranium/src/synapse_gz:
-    type: git
-    url: git@github.com:cognipilot/synapse_gz
-    version: main
   cranium/src/synapse_msgs:
     type: git
     url: git@github.com:cognipilot/synapse_msgs
