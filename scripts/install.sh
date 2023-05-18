@@ -85,7 +85,7 @@ else
 fi
 
 WGET_ARGS="-q --show-progress --progress=bar:force:noscroll --no-check-certificate"
-ZSDK_VERSION="0.15.2"
+ZSDK_VERSION="0.16.1"
 
 if ! [ -f /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh ]
 then
