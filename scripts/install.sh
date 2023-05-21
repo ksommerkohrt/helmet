@@ -91,11 +91,11 @@ if ! [ -f /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh ]
 then
 	sudo mkdir -p /opt/toolchains
 	cd /opt/toolchains
-	sudo wget ${WGET_ARGS} https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZSDK_VERSION}/zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.gz
-	sudo tar xvf zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.gz
+	sudo wget ${WGET_ARGS} https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZSDK_VERSION}/zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.xz
+	sudo tar xvf zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.xz
 	cd /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}
 	sudo ./setup.sh
-	sudo rm /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.gz
+	sudo rm /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}_linux-x86_64.tar.xz
 	sudo cp /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/sysroots/x86_64-pokysdk-linux/usr/share/openocd/contrib/60-openocd.rules /etc/udev/rules.d
 	sudo udevadm control --reload
 	cd $WORKSPACE_PATH
@@ -147,6 +147,7 @@ sudo apt-get install --no-install-recommends -y \
 	ament-cmake \
 	ros-humble-desktop \
 	ros-humble-cyclonedds \
+	ros-humble-actuator-msgs \
 	ros-humble-gps-msgs \
 	ros-humble-nav2-bringup \
 	ros-humble-rmw-cyclonedds-cpp \
@@ -282,18 +283,6 @@ then
 		echo -e "\033[0m"
 	else
 		echo -e "\033[1;32mSTATUS: zephyr base has already been added."
-		echo -e "\033[0m"
-	fi
-
-	# Export zephyr base if it does not exist.
-	if ! grep -qF "export ZEPHYR_BASE=$WORKSPACE_PATH/tools/zephyr_workspace/zephyr" /home/$USER/.bashrc
-	then
-		export ZEPHYR_BASE=$WORKSPACE_PATH/tools/zephyr_workspace/zephyr
-		echo "export ZEPHYR_BASE=$WORKSPACE_PATH/tools/zephyr_workspace/zephyr" >> /home/$USER/.bashrc
-		echo -e "\033[1;32mSTATUS: Added ZEPHYR_BASE to ~/.bashrc"
-		echo -e "\033[0m"
-	else
-		echo -e "\033[1;32mSTATUS: ZEPHYR_BASE already in ~/.bashrc"
 		echo -e "\033[0m"
 	fi
 	cd $WORKSPACE_PATH
