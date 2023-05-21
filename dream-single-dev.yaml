@@ -4,6 +4,10 @@ repositories:
     type: git
     url: git@github.com:cognipilot/cerebri
     version: reorg
+  cranium/src/cerebri_bringup:
+    type: git
+    url: git@github.com:cognipilot/cerebri_bringup
+    version: main
   cranium/src/corti:
     type: git
     url: git@github.com:cognipilot/corti
