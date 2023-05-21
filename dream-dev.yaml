@@ -1,16 +1,12 @@
 ---
 repositories:
-  ws/cerebri:
+  cranium/src/cerebri_bringup:
     type: git
-    url: git@github.com:cognipilot/cerebri
-    version: reorg
+    url: git@github.com:cognipilot/cerebri_bringup
+    version: main
   cranium/src/corti:
     type: git
     url: git@github.com:cognipilot/corti
-    version: main
-  electrode/src/electrode:
-    type: git
-    url: git@github.com:cognipilot/electrode
     version: main
   cranium/src/elm4:
     type: git
@@ -80,8 +76,16 @@ repositories:
     type: git
     url: git@github.com:cognipilot/synapse_tinyframe
     version: main
+  electrode/src/electrode:
+    type: git
+    url: git@github.com:cognipilot/electrode
+    version: main
   tools/src/hcdformat:
     type: git
     url: git@github.com:cognipilot/hcdformat
     version: main
+  ws/cerebri:
+    type: git
+    url: git@github.com:cognipilot/cerebri
+    version: reorg
 

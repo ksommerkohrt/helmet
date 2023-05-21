@@ -270,19 +270,30 @@ then
 	vcs pull
 fi
 
-if [ -d $WORKSPACE_PATH/tools/zephyr_workspace ]
+if [ -d $WORKSPACE_PATH/ws/cerebri ]
 then
-	if ! [ -f $WORKSPACE_PATH/tools/zephyr_workspace/.west ]
+	if ! [ -f $WORKSPACE_PATH/ws/.west ]
 	then
 		source /opt/.venv-zephyr/bin/activate
-		cd $WORKSPACE_PATH/tools/zephyr_workspace
-		west init -l --mf west.yml west_config 
+		cd $WORKSPACE_PATH/ws/cerebri
+		west init -l . 
 		west update
 		deactivate
-		echo -e "\033[1;32mSTATUS: zephyr base has been added."
+		echo -e "\033[1;32mSTATUS: zephyr has been initialized and updated."
 		echo -e "\033[0m"
 	else
-		echo -e "\033[1;32mSTATUS: zephyr base has already been added."
+		echo -e "\033[1;32mSTATUS: zephyr base has already been initialized and updated."
+		echo -e "\033[0m"
+	fi
+
+	if ! grep -qF "export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe" /home/$USER/.bashrc
+	then
+		export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe
+		echo "export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe" >> /home/$USER/.bashrc
+		echo -e "\033[1;32mSTATUS: Added CEREBRI_BINARY path to ~/.bashrc"
+		echo -e "\033[0m"
+	else
+		echo -e "\033[1;32mSTATUS: CEREBRI_BINARY path in ~/.bashrc"
 		echo -e "\033[0m"
 	fi
 	cd $WORKSPACE_PATH
