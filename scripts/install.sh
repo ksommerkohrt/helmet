@@ -123,6 +123,15 @@ then
 	sudo chmod +x /opt/zeth/net-setup.sh
 fi
 
+if ! [ -f  /etc/systemd/system/zeth-vlan.service ]
+then
+	sudo cp $SCRIPT_PATH/zeth-vlan.service /etc/systemd/system
+	sudo chmod 664 /etc/systemd/system/zeth-vlan.service
+	sudo systemctl daemon-reload
+	sudo systemctl enable zeth-vlan.service
+	sudo systemctl start zeth-vlan.service
+fi
+
 if ! [ -f /etc/apt/sources.list.d/ros2.list ]
 then
 	sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
@@ -170,6 +179,20 @@ sudo apt-get install --no-install-recommends -y \
 
 pip3 install cyclonedds pycdr2 
 
+# Setup gdb defaults
+if ! [ -f /home/$USER/.gdbinit ]
+then
+	cat << EOF >> /home/$USER/.gdbinit
+define hook-stop
+  refresh
+end
+EOF
+	echo -e "\033[1;32mSTATUS: Adding .gdbinit."
+	echo -e "\033[0m"
+else
+	echo -e "\033[1;32mSTATUS: .gdbinit has already been added."
+	echo -e "\033[0m"
+fi
 
 # See if ends with EOF and add one if it does not.
 if ! [[ $(tail -c1 "/home/$USER/.bashrc" | wc -l) -gt 0 ]]
