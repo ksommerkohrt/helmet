@@ -1,0 +1,59 @@
+---
+repositories:
+  cranium/src/cerebri_bringup:
+    type: git
+    url: git@github.com:cognipilot/cerebri_bringup
+    version: main
+  cranium/src/corti:
+    type: git
+    url: git@github.com:cognipilot/corti
+    version: main
+  cranium/src/elm4:
+    type: git
+    url: git@github.com:CogniPilot/elm4
+    version: main
+  cranium/src/elm4_robot:
+    type: git
+    url: git@github.com:CogniPilot/elm4_robot
+    version: main
+  cranium/src/elm4_simulator:
+    type: git
+    url: git@github.com:CogniPilot/elm4_simulator
+    version: main
+  cranium/src/elm4_desktop:
+    type: git
+    url: git@github.com:CogniPilot/elm4_desktop
+    version: main
+  cranium/src/synapse_gz:
+    type: git
+    url: git@github.com:cognipilot/synapse_gz
+    version: main
+  cranium/src/synapse_msgs:
+    type: git
+    url: git@github.com:cognipilot/synapse_msgs
+    version: main
+  cranium/src/synapse_protobuf:
+    type: git
+    url: git@github.com:cognipilot/synapse_protobuf
+    version: main
+  cranium/src/synapse_ros:
+    type: git
+    url: git@github.com:cognipilot/synapse_ros
+    version: main
+  cranium/src/synapse_tinyframe:
+    type: git
+    url: git@github.com:cognipilot/synapse_tinyframe
+    version: main
+  electrode/src/electrode:
+    type: git
+    url: git@github.com:cognipilot/electrode
+    version: main
+  tools/src/hcdformat:
+    type: git
+    url: git@github.com:cognipilot/hcdformat
+    version: main
+  ws/cerebri:
+    type: git
+    url: git@github.com:cognipilot/cerebri
+    version: reorg
+
