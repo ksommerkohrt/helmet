@@ -1,0 +1,62 @@
+---
+repositories:
+  cranium/src/can_send:
+    type: git
+    url: git@github.com:CogniPilot/can_send
+    version: main
+  cranium/src/canfd_msgs:
+    type: git
+    url: git@github.com:rudislabs/canfd_msgs
+    version: humble
+  cranium/src/corti:
+    type: git
+    url: git@github.com:CogniPilot/corti
+    version: main
+  cranium/src/joy_test_mixer_actuators:
+    type: git
+    url: git@github.com:CogniPilot/joy_test_mixer_actuators
+    version: main
+  cranium/src/ldlidar_stl_ros2:
+    type: git
+    url: git@github.com:rudislabs/ldlidar_stl_ros2
+    version: master
+  cranium/src/opencyphal_led:
+    type: git
+    url: git@github.com:rudislabs/opencyphal_led
+    version: main
+  cranium/src/opencyphal_send:
+    type: git
+    url: git@github.com:rudislabs/opencyphal_send
+    version: main
+  cranium/src/rf2o_laser_odometry:
+    type: git
+    url: git@github.com:rudislabs/rf2o_laser_odometry
+    version: master
+  cranium/src/synapse_msgs:
+    type: git
+    url: git@github.com:CogniPilot/synapse_msgs
+    version: main
+  cranium/src/synapse_protobuf:
+    type: git
+    url: git@github.com:CogniPilot/synapse_protobuf
+    version: main
+  cranium/src/synapse_ros:
+    type: git
+    url: git@github.com:CogniPilot/synapse_ros
+    version: main
+  cranium/src/synapse_tinyframe:
+    type: git
+    url: git@github.com:CogniPilot/synapse_tinyframe
+    version: main
+  cranium/src/vesc_can_control:
+    type: git
+    url: git@github.com:CogniPilot/vesc_can_control
+    version: main
+  tools/src/hcdformat:
+    type: git
+    url: git@github.com:CogniPilot/hcdformat
+    version: main
+  ws/cerebri:
+    type: git
+    url: git@github.com:CogniPilot/cerebri
+    version: main

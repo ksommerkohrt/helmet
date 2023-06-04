@@ -1,0 +1,47 @@
+---
+repositories:
+  cranium/src/cerebri_bringup:
+    type: git
+    url: git@github.com:CogniPilot/cerebri_bringup
+    version: main
+  cranium/src/corti:
+    type: git
+    url: git@github.com:CogniPilot/corti
+    version: main
+  cranium/src/dream_world:
+    type: git
+    url: git@github.com:CogniPilot/dream_world
+    version: main
+  cranium/src/synapse_gz:
+    type: git
+    url: git@github.com:CogniPilot/synapse_gz
+    version: main
+  cranium/src/synapse_msgs:
+    type: git
+    url: git@github.com:CogniPilot/synapse_msgs
+    version: main
+  cranium/src/synapse_protobuf:
+    type: git
+    url: git@github.com:CogniPilot/synapse_protobuf
+    version: main
+  cranium/src/synapse_ros:
+    type: git
+    url: git@github.com:CogniPilot/synapse_ros
+    version: main
+  cranium/src/synapse_tinyframe:
+    type: git
+    url: git@github.com:CogniPilot/synapse_tinyframe
+    version: main
+  electrode/src/electrode:
+    type: git
+    url: git@github.com:CogniPilot/electrode
+    version: main
+  tools/src/hcdformat:
+    type: git
+    url: git@github.com:CogniPilot/hcdformat
+    version: main
+  ws/cerebri:
+    type: git
+    url: git@github.com:CogniPilot/cerebri
+    version: main
+
