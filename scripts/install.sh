@@ -278,9 +278,18 @@ cd $WORKSPACE_PATH
 
 if [ -f $WORKSPACE_PATH/helmet/$VCS_FILE ] 
 then
-	echo -e "\033[1;32mSTATUS: Performing vcs import with $VCS_FILE."
+	echo -e "\033[1;32mSTATUS: Performing vcs import of base with $(dirname $WORKSPACE_PATH/helmet/$VCS_FILE)/base.yaml."
 	echo -e "\033[0m"
-	vcs import < $WORKSPACE_PATH/helmet/$VCS_FILE
+	vcs import < $(dirname $WORKSPACE_PATH/helmet/$VCS_FILE)/base.yaml
+	if [ $(basename $VCS_FILE) !=  "base.yaml" ]
+	then
+		echo -e "\033[1;32mSTATUS: Performing vcs import with $VCS_FILE."
+		echo -e "\033[0m"
+		vcs import < $WORKSPACE_PATH/helmet/$VCS_FILE
+	else
+		echo -e "\033[1;32mSTATUS: Only vcs import of base."
+		echo -e "\033[0m"
+	fi
 elif [ -z ${PULL_BOOL} ]
 then
 	echo -e "\033[1;31mSTATUS: vcs import did not find valid VCS_FILE path to: $WORKSPACE_PATH/helmet/$VCS_FILE "
@@ -309,14 +318,14 @@ then
 		echo -e "\033[0m"
 	fi
 
-	if ! grep -qF "export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe" /home/$USER/.bashrc
+	if ! grep -qF "export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app" /home/$USER/.bashrc
 	then
-		export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe
-		echo "export CEREBRI_BINARY=$WORKSPACE_PATH/ws/cerebri/build/zephyr/zephyr.exe" >> /home/$USER/.bashrc
-		echo -e "\033[1;32mSTATUS: Added CEREBRI_BINARY path to ~/.bashrc"
+		export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app
+		echo "export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app" >> /home/$USER/.bashrc
+		echo -e "\033[1;32mSTATUS: Added CEREBRI_BINARY_BASE path to ~/.bashrc"
 		echo -e "\033[0m"
 	else
-		echo -e "\033[1;32mSTATUS: CEREBRI_BINARY path in ~/.bashrc"
+		echo -e "\033[1;32mSTATUS: CEREBRI_BINARY_BASE path in ~/.bashrc"
 		echo -e "\033[0m"
 	fi
 	cd $WORKSPACE_PATH
