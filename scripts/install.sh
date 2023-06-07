@@ -64,7 +64,7 @@ CURRENT_USER=`whoami`
 # Setup west
 if ! [ -f /opt/.venv-zephyr/bin/activate ]
 then
-	sudo mkdir /opt/.venv-zephyr
+	sudo mkdir -p /opt/.venv-zephyr
 	sudo chown $CURRENT_USER:$CURRENT_USER /opt/.venv-zephyr
 	python3 -m venv --prompt zephyr /opt/.venv-zephyr
 	source /opt/.venv-zephyr/bin/activate
