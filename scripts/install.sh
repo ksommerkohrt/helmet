@@ -318,16 +318,17 @@ then
 		echo -e "\033[0m"
 	fi
 
-	if ! grep -qF "export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app" /home/$USER/.bashrc
+	# Source wwest completion if it does not exist.
+	if ! grep -qF "source $WORKSPACE_PATH/ws/zephyr/scripts/west_commands/completion/west-completion.bash" /home/$USER/.bashrc
 	then
-		export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app
-		echo "export CEREBRI_BINARY_BASE=$WORKSPACE_PATH/ws/cerebri/app" >> /home/$USER/.bashrc
-		echo -e "\033[1;32mSTATUS: Added CEREBRI_BINARY_BASE path to ~/.bashrc"
-		echo -e "\033[0m"
-	else
-		echo -e "\033[1;32mSTATUS: CEREBRI_BINARY_BASE path in ~/.bashrc"
-		echo -e "\033[0m"
+		source $WORKSPACE_PATH/ws/zephyr/scripts/west_commands/completion/west-completion.bash
+		cat << EOF >> /home/$USER/.bashrc
+if [ -f $WORKSPACE_PATH/ws/zephyr/scripts/west_commands/completion/west-completion.bash ]; then
+	source $WORKSPACE_PATH/ws/zephyr/scripts/west_commands/completion/west-completion.bash
+fi
+EOF
 	fi
+	
 	cd $WORKSPACE_PATH
 	eval "$( cat /home/$USER/.bashrc | tail -n +10)"
 fi
@@ -390,7 +391,7 @@ then
 	then
 		echo "export GZ_SIM_RESOURCE_PATH=$WORKSPACE_PATH/cranium/src/dream/models:$WORKSPACE_PATH/cranium/src/dream/worlds" >> /home/$USER/.bashrc
 	else
-		# If export does exist but does not have correct models path thow a warning to manually fix.
+		# If export does exist but does not have correct models path throw a warning to manually fix.
 		if ! echo $GZ_SIM_RESOURCE_PATH | grep -qF "$WORKSPACE_PATH/cranium/src/dream/models"
 		then
 			echo -e "\033[0;31mWARNING!!! It appears you already have a GZ_SIM_RESOURCE_PATH but $WORKSPACE_PATH/cranium/src/dream/models is not in it!"
