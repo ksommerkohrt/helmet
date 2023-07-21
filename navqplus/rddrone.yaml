@@ -1,0 +1,10 @@
+---
+repositories:
+  cranium/src/rddrone:
+    type: git
+    url: git@github.com:CogniPilot/rddrone
+    version: main
+  cranium/src/rddrone_robot:
+    type: git
+    url: git@github.com:CogniPilot/rddrone_robot
+    version: main
