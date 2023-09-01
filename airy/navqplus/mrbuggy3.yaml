@@ -1,0 +1,18 @@
+---
+repositories:
+  cranium/src/mrbuggy3:
+    type: git
+    url: git@github.com:CogniPilot/mrbuggy3
+    version: 1130b805c2bfabb005d88c048dc2fa593b37d06e
+  cranium/src/mrbuggy3_robot:
+    type: git
+    url: git@github.com:CogniPilot/mrbuggy3_robot
+    version: c27ef45cb0cc4b23aee96e80331afac3c662dc3f
+  cranium/src/ldlidar_stl_ros2:
+    type: git
+    url: git@github.com:rudislabs/ldlidar_stl_ros2
+    version: bf668a89baf722a787dadc442860dcbf33a82f5a
+  cranium/src/rf2o_laser_odometry:
+    type: git
+    url: git@github.com:rudislabs/rf2o_laser_odometry
+    version: b38c68e46387b98845ecbfeb6660292f967a00d3

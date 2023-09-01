@@ -1,0 +1,46 @@
+---
+repositories:
+  cranium/src/cerebri_bringup:
+    type: git
+    url: git@github.com:CogniPilot/cerebri_bringup
+    version: 293e16805cca46938f9a5e5747a980d5fcc8e431
+  cranium/src/corti:
+    type: git
+    url: git@github.com:CogniPilot/corti
+    version: 1a76ee207753bf2efb21a7db636079dcf065605d
+  cranium/src/dream_world:
+    type: git
+    url: git@github.com:CogniPilot/dream_world
+    version: f0b543c2bb78ec5a6b8974f90fcd4d021bad282b
+  cranium/src/synapse_gz:
+    type: git
+    url: git@github.com:CogniPilot/synapse_gz
+    version: 35b44dd4e429af48f736cd53d882c764e168c6c6
+  cranium/src/synapse_msgs:
+    type: git
+    url: git@github.com:CogniPilot/synapse_msgs
+    version: 2b4d5a84ef79338ae91c878686300ebcfa6d114d
+  cranium/src/synapse_protobuf:
+    type: git
+    url: git@github.com:CogniPilot/synapse_protobuf
+    version: 01a8d0a1d83d968615baa77d96ca526096a6ff70
+  cranium/src/synapse_ros:
+    type: git
+    url: git@github.com:CogniPilot/synapse_ros
+    version: 17b6c2709a5a8cb4c8a2cf290a7061d048f28b22
+  cranium/src/synapse_tinyframe:
+    type: git
+    url: git@github.com:CogniPilot/synapse_tinyframe
+    version: 8ea7c6ab3c5cc60a28fe7d5553a4d12f3a85bbec
+  electrode/src/electrode:
+    type: git
+    url: git@github.com:CogniPilot/electrode
+    version: ac8d2600cfa9ae06cfffbed3979ccddb89df10c4
+  tools/src/hcdformat:
+    type: git
+    url: git@github.com:CogniPilot/hcdformat
+    version: 5b6f1c87489735b3e5726af73b6dc2a3ca859eb6
+  ws/cerebri:
+    type: git
+    url: git@github.com:CogniPilot/cerebri
+    version: 2241c980fcc95f51459bf3c75123ebbac2421426

@@ -1,0 +1,14 @@
+---
+repositories:
+  cranium/src/elm4:
+    type: git
+    url: git@github.com:CogniPilot/elm4
+    version: 1bf6ad3f5cb3c379f8716d656c031f80cc663bfd
+  cranium/src/elm4_simulator:
+    type: git
+    url: git@github.com:CogniPilot/elm4_simulator
+    version: 2937bdd41229b21d48ef65afc39c88c2e80e3f69
+  cranium/src/elm4_desktop:
+    type: git
+    url: git@github.com:CogniPilot/elm4_desktop
+    version: 096b50a950a24ccb57dd76f008dbae241bd72cfe

@@ -1,0 +1,14 @@
+---
+repositories:
+  cranium/src/mrbuggy3:
+    type: git
+    url: git@github.com:CogniPilot/mrbuggy3
+    version: 1130b805c2bfabb005d88c048dc2fa593b37d06e
+  cranium/src/mrbuggy3_simulator:
+    type: git
+    url: git@github.com:CogniPilot/mrbuggy3_simulator
+    version: ea7abd51ee14cde72ad4af671fae89f677bb0a16
+  cranium/src/mrbuggy3_desktop:
+    type: git
+    url: git@github.com:CogniPilot/mrbuggy3_desktop
+    version: 1bb453969ea602eb5ab240269ceeb972abdf8cef
