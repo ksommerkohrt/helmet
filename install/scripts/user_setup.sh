@@ -76,6 +76,7 @@ sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
 sudo chown -R $UID:$UID /home/$USER/.cmake
 
 sudo rosdep init
+rosdep update
 
 # gdbinit file
 cat << EOF > ~/.gdbinit
