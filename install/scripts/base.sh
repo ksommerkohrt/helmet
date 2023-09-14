@@ -77,9 +77,15 @@ curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/opt/poetry pytho
 sudo mkdir -p /opt/vim/
 echo $whoami
 sudo chown -R $UID:$UID /opt/vim
-git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git /opt/vim/YouCompleteMe
-git clone https://github.com/preservim/nerdcommenter.git /opt/vim/NERDCommenter
-git clone https://github.com/ciaranm/securemodelines /opt/vim/securemodelines
+if ! [ -d /opt/vim/YouCompleteMe ]; then
+  git clone --recurse-submodules https://github.com/ycm-core/YouCompleteMe.git /opt/vim/YouCompleteMe
+fi
+if ! [ -d /opt/vim/NERDCommenter ]; then
+  git clone https://github.com/preservim/nerdcommenter.git /opt/vim/NERDCommenter
+fi
+if ! [ -d /opt/vim/securemodelines ]; then
+  git clone https://github.com/ciaranm/securemodelines /opt/vim/securemodelines
+fi
 pushd /opt/vim/YouCompleteMe
 ./install.py --clangd-completer
 popd
