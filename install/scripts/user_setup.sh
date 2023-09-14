@@ -21,11 +21,21 @@ ZSDK_VERSION="0.16.1"
 
 # vim setup
 mkdir -p ~/.vim/pack/plugins/opt
-ln -s /opt/vim/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe
-ln -s /opt/vim/NERDCommenter ~/.vim/pack/plugins/opt/NERDCommenter
-ln -s /opt/vim/securemodelines ~/.vim/pack/plugins/opt/securemodelines
+if ! [ -f ~/.vim/pack/plugins/opt/YouCompleteMe ]; then
+  ln -s /opt/vim/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe
+fi
 
+if ! [ -f ~/.vim/pack/plugins/opt/NERDCommenter ]; then
+  ln -s /opt/vim/NERDCommenter ~/.vim/pack/plugins/opt/NERDCommenter
+fi
+
+if ! [ -f ~/.vim/pack/plugins/opt/securemodelines ]; then
+ln -s /opt/vim/securemodelines ~/.vim/pack/plugins/opt/securemodelines
+fi
+
+if ! grep -qF "COGNIPILOT_SETUP" ~/.vimrc; then
 cat << EOF >> ~/.vimrc
+# COGNIPILOT_SETUP
 packadd YouCompleteMe
 packadd NERDCommenter
 packadd securemodelines
@@ -59,6 +69,7 @@ set mouse=a		" Enable mouse usage (all modes)
 
 hi YcmWarningSection ctermbg=52
 EOF
+fi
 
 # zephyr
 sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
@@ -125,7 +136,7 @@ EOF
 fi
 
 # native specific install
-if [ "$SCRIPT_MODE" = "native" ]; then
+if [ $SCRIPT_MODE = "native" ]; then
 
   # setup systemd for zeth
   if ! [ -f  /etc/systemd/system/zeth-vlan.service ]
@@ -141,7 +152,7 @@ if [ "$SCRIPT_MODE" = "native" ]; then
   mkdir -p ~/cognipilot
 
 # docker specific install
-elif [ "$SCRIPT_MODE" = "docker" ]; then
+elif [ $SCRIPT_MODE = "docker" ]; then
 
   # remove plugins that don't work on docker for terminator
   sudo rm -rf /usr/lib/python3/dist-packages/terminatorlib/plugins/activitywatch.py
