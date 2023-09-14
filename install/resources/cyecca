@@ -5,9 +5,13 @@ set -e
 mkdir -p ~/bin
 cat << EOF >> ~/bin/python_cyecca
 #!/bin/bash
-poetry run -C ~/cognipilot/tools/src/cyecca python \$@
+pushd ~/cognipilot/tools/src/cyecca
+poetry run python \$@
+popd
 EOF
 chmod +x ~/bin/python_cyecca
 
-poetry install -C ~/cognipilot/tools/src/cyecca
-poetry run -C ~/cognipilot/tools/src/cyecca jupyter lab
+pushd ~/cognipilot/tools/src/cyecca
+poetry install
+poetry run jupyter lab
+popd
