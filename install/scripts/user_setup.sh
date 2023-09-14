@@ -33,9 +33,7 @@ if ! [ -d ~/.vim/pack/plugins/opt/securemodelines ]; then
   ln -s /opt/vim/securemodelines ~/.vim/pack/plugins/opt/securemodelines
 fi
 
-if ! grep -qF "COGNIPILOT_SETUP" ~/.vimrc; then
-cat << EOF >> ~/.vimrc
-# COGNIPILOT_SETUP
+cat << EOF > ~/.vimrc
 packadd YouCompleteMe
 packadd NERDCommenter
 packadd securemodelines
@@ -69,7 +67,6 @@ set mouse=a		" Enable mouse usage (all modes)
 
 hi YcmWarningSection ctermbg=52
 EOF
-fi
 
 # zephyr
 sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
