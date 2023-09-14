@@ -18,6 +18,7 @@ else
 fi
 
 ZSDK_VERSION="0.16.1"
+CURRENT_USER=`whoami`
 
 # vim setup
 mkdir -p ~/.vim/pack/plugins/opt
@@ -70,7 +71,7 @@ EOF
 
 # zephyr
 sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
-sudo chown -R $UID:$UID /home/$USER/.cmake
+sudo chown -R $UID:$UID /home/$CURRENT_USER/.cmake
 
 # update rosdep
 if ! [ -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then
@@ -102,23 +103,18 @@ cat << EOF >> ~/.bashrc
 # COGNIPILOT_SETUP
 source /opt/ros/humble/setup.bash
 if [ -f \$HOME/cognipilot/ws/zephyr/scripts/west_commands/completion/west-completion.bash ]; then
-  #echo sourcing west completion
   source \$HOME/cognipilot/ws/zephyr/scripts/west_commands/completion/west-completion.bash
 fi
 if [ -f \$HOME/cognipilot/gazebo/install/setup.sh ]; then
   source \$HOME/cognipilot/gazebo/install/setup.sh
-  #echo gazebo built, sourcing
 fi
 if [ -f \$HOME/cognipilot/cranium/install/setup.sh ]; then
-  #echo dream built, sourcing
   source \$HOME/cognipilot/cranium/install/setup.sh
 fi
 if [ -f \$HOME/cognipilot/ws/cerebri/install/setup.sh ]; then
-  #echo cerebri built, sourcing
   source \$HOME/cognipilot/ws/cerebri/install/setup.sh
 fi
 if [ -f \$HOME/cognipilot/electrode/install/setup.sh ]; then
-  #echo electrode built, sourcing
   source \$HOME/cognipilot/electrode/install/setup.sh
 fi
 source /usr/share/colcon_cd/function/colcon_cd.sh
