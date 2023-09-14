@@ -62,7 +62,7 @@ EOF
 
 # zephyr
 sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
-sudo chown -R $UID:$UID /home/user/.cmake
+sudo chown -R $UID:$UID /home/$USER/.cmake
 
 sudo rosdep init
 
