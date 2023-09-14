@@ -134,7 +134,7 @@ EOF
 fi
 
 # native specific install
-if [ $SCRIPT_MODE = "native" ]; then
+if [ $SCRIPT_MODE == "native" ]; then
 
   # setup systemd for zeth
   if ! [ -f  /etc/systemd/system/zeth-vlan.service ]
@@ -150,7 +150,7 @@ if [ $SCRIPT_MODE = "native" ]; then
   mkdir -p ~/cognipilot
 
 # docker specific install
-elif [ $SCRIPT_MODE = "docker" ]; then
+elif [ $SCRIPT_MODE == "docker" ]; then
 
   # remove plugins that don't work on docker for terminator
   sudo rm -rf /usr/lib/python3/dist-packages/terminatorlib/plugins/activitywatch.py
