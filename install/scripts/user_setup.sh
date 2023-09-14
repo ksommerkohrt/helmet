@@ -130,7 +130,7 @@ if [ "$SCRIPT_MODE" = "native" ]; then
   # setup systemd for zeth
   if ! [ -f  /etc/systemd/system/zeth-vlan.service ]
   then
-    sudo cp $SCRIPT_PATH/zeth-vlan.service /etc/systemd/system
+    sudo cp ~/cognipilot/helmet/install/resources/zeth-vlan.service /etc/systemd/system
     sudo chmod 664 /etc/systemd/system/zeth-vlan.service
     sudo systemctl daemon-reload
     sudo systemctl enable zeth-vlan.service
