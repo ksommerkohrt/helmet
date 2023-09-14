@@ -1,0 +1,10 @@
+# This is a comment
+[global_config]
+dbus = False
+enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+
+[keybindings]
+
+[profiles]
+[[default]]
+scrollback_infinite = True
