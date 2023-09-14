@@ -4,8 +4,13 @@ set -x
 
 ROS_VERSION="humble"
 
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+if ! [ -f /usr/share/keyrings/ros-archive-keyring.gpg ]; then
+  sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+fi
+
+if ! [ -f /etc/apt/sources.list.d/ros2.list ]; then
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+fi
 
 sudo apt-get -y update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
@@ -25,4 +30,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 
 sudo pip install cyclonedds pycdr2
 
-# vi ts=2 sw=2 et
+# vi: ts=2 sw=2 et
