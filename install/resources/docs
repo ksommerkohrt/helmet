@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 echo Build CogniPilot Docs
-cd ~/work
-if [ ! -d ~/work/docs ] ; then
-  git clone git@github.com:CogniPilot/cognipilot_docs ~/work/docs
+cd ~/cognipilot
+if [ ! -d ~/cognipilot/docs ] ; then
+  git clone git@github.com:CogniPilot/cognipilot_docs ~/cognipilot/docs
 fi
-cd ~/work/docs
+cd ~/cognipilot/docs
 poetry install --no-root
 poetry run mkdocs serve -a 0.0.0.0:8000
