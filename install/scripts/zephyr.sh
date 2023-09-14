@@ -27,14 +27,3 @@ pip install west
 pip install catkin-tools
 pip install -r https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/master/scripts/requirements.txt
 pip3 check
-
-# setup ethernet
-sudo mkdir -p /opt/zeth
-sudo cp resources/zeth.conf /opt/zeth
-sudo cp resources/net-setup.sh /opt/zeth
-
-# setup jlink
-sudo dpkg --unpack /tmp/JLink_Linux_V788c_x86_64.deb
-sudo rm /var/lib/dpkg/info/jlink.postinst -f
-sudo dpkg --configure jlink
-sudo apt install -yf
