@@ -36,6 +36,10 @@ repositories:
     type: git
     url: git@github.com:CogniPilot/electrode
     version: main
+  tools/src/cyecca:
+    type: git
+    url: git@github.com:CogniPilot/cyecca
+    version: main
   tools/src/hcdformat:
     type: git
     url: git@github.com:CogniPilot/hcdformat
