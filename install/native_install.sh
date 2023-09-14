@@ -10,6 +10,18 @@ pushd ~/cognipilot/helmet/install
 ./scripts/gazebo.sh
 ./scripts/user_setup.sh native
 
+# install zeth config
+sudo mkdir -p /opt/zeth
+
+if ! [ -f  /opt/zeth/zeth.conf ]
+then
+  sudo cp ./resources/zeth.conf /opt/zeth
+fi
+
+if ! [ -f  /opt/zeth/net-setup.sh ]
+then
+  sudo cp ./resources/net-setup.sh /opt/zeth
+fi
 
 # install scripts
 cp ./resources/build_mrbuggy3_sitl ~/bin
