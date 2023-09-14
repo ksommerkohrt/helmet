@@ -76,7 +76,7 @@ sudo -E /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c
 sudo chown -R $UID:$UID /home/$USER/.cmake
 
 # update rosdep
-if ! [ -f  /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+if ! [ -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then
   sudo rosdep init
 fi
 rosdep update
