@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+set -x
+
 ./scripts/base.sh
 ./scripts/zephyr.sh
 ./scripts/ros.sh
