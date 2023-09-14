@@ -21,16 +21,16 @@ ZSDK_VERSION="0.16.1"
 
 # vim setup
 mkdir -p ~/.vim/pack/plugins/opt
-if ! [ -f ~/.vim/pack/plugins/opt/YouCompleteMe ]; then
+if ! [ -f $HOME/.vim/pack/plugins/opt/YouCompleteMe ]; then
   ln -s /opt/vim/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe
 fi
 
-if ! [ -f ~/.vim/pack/plugins/opt/NERDCommenter ]; then
+if ! [ -f $HOME/.vim/pack/plugins/opt/NERDCommenter ]; then
   ln -s /opt/vim/NERDCommenter ~/.vim/pack/plugins/opt/NERDCommenter
 fi
 
-if ! [ -f ~/.vim/pack/plugins/opt/securemodelines ]; then
-ln -s /opt/vim/securemodelines ~/.vim/pack/plugins/opt/securemodelines
+if ! [ -f $HOME/.vim/pack/plugins/opt/securemodelines ]; then
+  ln -s /opt/vim/securemodelines ~/.vim/pack/plugins/opt/securemodelines
 fi
 
 if ! grep -qF "COGNIPILOT_SETUP" ~/.vimrc; then
