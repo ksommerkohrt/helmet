@@ -165,6 +165,7 @@ export SHELL=/bin/bash
 export XDG_RUNTIME_DIR=/tmp/runtime-user
 export NO_AT_BRIDGE=1
 eval \`keychain -q --eval --agents "gpg,ssh"\`
+export GPG_TTY=\$(tty)
 EOF
 
   fi
