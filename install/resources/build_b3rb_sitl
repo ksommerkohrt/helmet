@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-echo Setup Helmet for MRBuggy3 SITL
+echo Setup Helmet for b3rb SITL
 pushd ~/cognipilot
 if [ ! -d helmet ] ; then
   git clone git@github.com:CogniPilot/helmet
 fi
 vcs import < helmet/dream/base.yaml
-vcs import < helmet/dream/mrbuggy3.yaml
+vcs import < helmet/dream/b3rb.yaml
 popd
 
 echo Build Cranium
@@ -16,13 +16,13 @@ colcon build --symlink-install
 . ./install/setup.sh
 popd
 
-echo Build Cerebri for MRBuggy3 SITL
+echo Build Cerebri for b3rb SITL
 pushd ~/cognipilot/ws/cerebri
 if [ ! -d ~/cognipilot/ws/.west ] ; then
   west init -l .
 fi
 west update
-west build app/mrbuggy3/ -b native_posix -t install -p
+west build app/b3rb/ -b native_posix -t install -p
 . ./install/setup.sh
 popd
 
