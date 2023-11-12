@@ -26,7 +26,7 @@ fi
 
 
 # install scripts
-cp ./resources/build_b3rb_sitl ~/bin
+cp ./resources/build_b3rb_sil ~/bin
 cp ./resources/cyecca ~/bin
 cp ./resources/docs ~/bin
 
