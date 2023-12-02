@@ -129,7 +129,6 @@ if ! grep -qF "COGNIPILOT_SETUP" ~/.bashrc; then
 if [ -f /home/\$USER/cognipilot/cranium/install/setup.sh ]; then
   source /home/\$USER/cognipilot/cranium/install/setup.sh
 fi
-source /usr/share/colcon_cd/function/colcon_cd.sh
 EOF
 fi
 
