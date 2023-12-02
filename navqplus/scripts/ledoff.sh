@@ -1,2 +1,0 @@
-#!/bin/bash
-ros2 topic pub -t 1 /cerebri/in/led_array synapse_msgs/msg/LEDArray "{led:[{index: 0, r: 0, g: 0, b: 0}, {index: 1, r: 0, g: 0, b: 0}, {index: 2, r: 0, g: 0, b: 0}, {index: 3, r: 0, g: 0, b: 0}, {index: 4, r: 0, g: 0, b: 0}, {index: 5, r: 0, g: 0, b: 0}, {index: 6, r: 0, g: 0, b: 0}, {index: 7, r: 0, g: 0, b: 0}, {index: 8, r: 0, g: 0, b: 0}, {index: 9, r: 0, g: 0, b: 0}, {index: 10, r: 0, g: 0, b: 0}, {index: 11, r: 0, g: 0, b: 0}]}"
