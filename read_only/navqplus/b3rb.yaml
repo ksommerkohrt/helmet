@@ -11,4 +11,4 @@ repositories:
   cranium/src/ldlidar_stl_ros2:
     type: git
     url: https://github.com/rudislabs/ldlidar_stl_ros2.git
-    version: master
+    version: main
