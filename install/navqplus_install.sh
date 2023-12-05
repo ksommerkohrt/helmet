@@ -46,7 +46,7 @@ while :; do
 done
 
 while :; do
-	read -p $'\n\e[2;33mOptimize runtime performance by disabling and turning off daemons [y/n]?\e[0m ' optimize
+	read -p $'\n\e[2;33mOptimize runtime performance by defaulting off unused daemons (reccomended - y) [y/n]?\e[0m ' optimize
 
 	if [[ ${optimize,,} == "y" ]]; then
 		optimize="y"
@@ -77,20 +77,20 @@ select opt in airy main; do
 	esac
 done
 
-PS3=$'\n\e[2;33mEnter a robot (number) to build: \e[0m'
+PS3=$'\n\e[2;33mEnter a platform (number) to build: \e[0m'
 select opt in b3rb elm4 rddrone; do
 	case $opt in
 	b3rb)
 		robot=b3rb
-		echo -e "\e[2;32mBuilding robot b3rb.\n\e[0m"
+		echo -e "\e[2;32mBuilding platform b3rb.\n\e[0m"
 		break;;
 	elm4)
 		robot=elm4
-		echo -e "\e[2;32mBuilding robot elm4.\n\e[0m"
+		echo -e "\e[2;32mBuilding platform elm4.\n\e[0m"
 		break;;
 	rddrone)
 		robot=rddrone
-		echo -e "\e[2;32mBuilding robot rddrone.\n\e[0m"
+		echo -e "\e[2;32mBuilding platform rddrone.\n\e[0m"
 		break;;
 	*)
 		echo -e "\e[31mInvalid option $REPLY\n\e[0m";;
