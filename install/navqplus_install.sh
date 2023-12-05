@@ -179,4 +179,4 @@ vcs pull
 echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Running colcon to build cranium ROS packages\e[0m"
 colcon build --symlink-install
 
-echo -e "\e[2;32mCogniPilot NavQPlus installer has finished!\nPlease source your .bashrc and/or restart the NavQPlus.\e[0m"
+echo -e "\e[2;32mCogniPilot NavQPlus installer has finished!\nPlease source your .bashrc by running:\n\e[0m\e[31m    source ~/.bashrc\n\e[0m\e[2;32mOr restart the NavQPlus by running:\n\e[0m\e[31m    sudo shutdown -r now\e[0m"
