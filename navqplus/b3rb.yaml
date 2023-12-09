@@ -12,3 +12,7 @@ repositories:
     type: git
     url: git@github.com:rudislabs/ldlidar_stl_ros2
     version: main
+  cranium/src/imx_ov5645:
+    type: git
+    url: git@github.com:rudislabs/imx_ov5645
+    version: main
