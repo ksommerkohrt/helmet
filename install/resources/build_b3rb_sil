@@ -22,7 +22,7 @@ if [ ! -d ~/cognipilot/ws/.west ] ; then
   west init -l .
 fi
 west update
-west build app/b3rb/ -b native_posix -t install -p
+west build app/b3rb/ -b native_sim -t install -p
 . ./install/setup.sh
 popd
 
