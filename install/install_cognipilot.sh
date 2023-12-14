@@ -72,6 +72,6 @@ done
 
 mkdir -p ~/cognipilot/installer
 
-wget -O ~/cognipilot/installer/navqplus_install.sh https://raw.githubusercontent.com/CogniPilot/helmet/$release/install/$installer
+wget -O ~/cognipilot/installer/$installer https://raw.githubusercontent.com/CogniPilot/helmet/$release/install/$installer
 chmod a+x ~/cognipilot/installer/$installer
 /bin/bash ~/cognipilot/installer/$installer
