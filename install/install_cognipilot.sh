@@ -41,12 +41,8 @@ done
 echo -e "\n\e[2;32mWelcome to the CogniPilot universal installer ($VER) - Ctrl-c at any time to exit.\e[0m\n"
 
 PS3=$'\n\e[2;33mEnter a CogniPilot release (number) to use: \e[0m'
-select opt in airy main; do
+select opt in main; do
   case $opt in
-  airy)
-    release=airy
-    echo -e "\e[2;32mUsing CogniPilot release airy alicanto.\n\e[0m"
-    break;;
   main)
     release=main
     echo -e "\e[2;32mUsing CogniPilot main development branch.\n\e[0m"
@@ -74,6 +70,6 @@ done
 
 mkdir -p ~/cognipilot/installer
 
-wget -O ~/cognipilot/installer/$installer https://raw.githubusercontent.com/Cognipilot/helmet/$release/install/$installer
+wget -O ~/cognipilot/installer/$installer https://raw.githubusercontent.com/ksommerkohrt/helmet/$release/install/$installer
 chmod a+x ~/cognipilot/installer/$installer
 /bin/bash ~/cognipilot/installer/$installer
