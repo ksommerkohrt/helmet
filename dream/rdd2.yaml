@@ -2,7 +2,7 @@
 repositories:
   cranium/src/rdd2:
     type: git
-    url: git@github.com:CogniPilot/rdd2
+    url: git@github.com:ksommerkohrt/rdd2.git
     version: main
   cranium/src/rdd2_simulator:
     type: git
