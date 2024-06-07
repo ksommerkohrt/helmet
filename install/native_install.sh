@@ -60,7 +60,7 @@ cd ~/cognipilot
 if [[ ${sshgit} == "y" ]]; then
   echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking helmet version, updating if needed.\e[0m"
   if [ ! -f ~/cognipilot/helmet/.git/HEAD ]; then
-    git clone -b $release git@github.com:Cognipilot/helmet.git
+    git clone -b $release git@github.com:ksommerkohrt/helmet.git
   elif ! grep -qF "$release" ~/cognipilot/helmet/.git/HEAD; then
     cd ~/cognipilot/helmet
     git checkout $release
@@ -74,7 +74,7 @@ if [[ ${sshgit} == "y" ]]; then
 elif [[ ${sshgit} == "n" ]]; then
   echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking read only helmet version, updating if needed.\e[0m"
   if [ ! -f ~/cognipilot/helmet/.git/HEAD ]; then
-    git clone -b $release https://github.com/Cognipilot/helmet.git
+    git clone -b $release https://github.com/ksommerkohrt/helmet.git
   elif ! grep -qF "$release" ~/cognipilot/helmet/.git/HEAD; then
     cd ~/cognipilot/helmet
     git checkout $release
