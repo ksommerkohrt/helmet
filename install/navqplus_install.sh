@@ -70,12 +70,8 @@ while :; do
 done
 
 PS3=$'\n\e[2;33mEnter a CogniPilot release (number) to use: \e[0m'
-select opt in airy main; do
+select opt in main; do
 	case $opt in
-	airy)
-		release=airy
-		echo -e "\e[2;32mUsing CogniPilot release airy alicanto.\n\e[0m"
-		break;;
 	main)
 		release=main
 		echo -e "\e[2;32mUsing CogniPilot main development branch.\n\e[0m"
@@ -85,23 +81,7 @@ select opt in airy main; do
 	esac
 done
 
-if [[ ${release} == "airy" ]]; then
-PS3=$'\n\e[2;33mEnter an airy platform (number) to build: \e[0m'
-select opt in b3rb elm4; do
-	case $opt in
-	b3rb)
-		robot=b3rb
-		echo -e "\e[2;32mBuilding platform b3rb.\n\e[0m"
-		break;;
-	elm4)
-		robot=elm4
-		echo -e "\e[2;32mBuilding platform elm4.\n\e[0m"
-		break;;
-	*)
-		echo -e "\e[31mInvalid option $REPLY\n\e[0m";;
-	esac
-done
-elif [[ ${release} == "main" ]]; then
+if [[ ${release} == "main" ]]; then
 PS3=$'\n\e[2;33mEnter a platform (number) to build: \e[0m'
 select opt in b3rb elm4 rdd2; do
 	case $opt in
@@ -164,7 +144,7 @@ cd /home/$USER/cognipilot
 if [[ ${sshgit} == "y" ]]; then
 	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking helmet version, updating if needed.\e[0m"
 	if [ ! -f /home/$USER/cognipilot/helmet/.git/HEAD ]; then
-		git clone -b $release git@github.com:CogniPilot/helmet.git
+		git clone -b $release git@github.com:ksommerkohrt/helmet.git
 	elif ! grep -qF "$release" /home/$USER/cognipilot/helmet/.git/HEAD; then
 		cd /home/$USER/cognipilot/helmet
 		git checkout $release
@@ -182,7 +162,7 @@ if [[ ${sshgit} == "y" ]]; then
 elif [[ ${sshgit} == "n" ]]; then
 	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking read only helmet version, updating if needed.\e[0m"
 	if [ ! -f /home/$USER/cognipilot/helmet/.git/HEAD ]; then
-		git clone -b $release https://github.com/CogniPilot/helmet.git
+		git clone -b $release https://github.com/ksommerkohrt/helmet.git
 	elif ! grep -qF "$release" /home/$USER/cognipilot/helmet/.git/HEAD; then
 		cd /home/$USER/cognipilot/helmet
 		git checkout $release
@@ -193,10 +173,10 @@ elif [[ ${sshgit} == "n" ]]; then
 		git pull
 		cd /home/$USER/cognipilot
 	fi
-	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Importing helmet/read_only/navqplus/base.yaml\e[0m"
+	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Importing helmet/navqplus/base.yaml\e[0m"
 	vcs import < helmet/read_only/navqplus/base.yaml
-	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Importing helmet/read_only/navqplus/$robot.yaml\e[0m"
-	vcs import < helmet/read_only/navqplus/$robot.yaml
+	echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Importing helmet/navqplus/$robot.yaml\e[0m"
+	vcs import < helmet/navqplus/$robot.yaml
 fi
 
 cd /home/$USER/cognipilot/cranium
