@@ -10,7 +10,7 @@ repositories:
     version: main
   cranium/src/dream_world:
     type: git
-    url: git@github.com:CogniPilot/dream_world
+    url: git@github.com:ksommerkohrt/dream_world.git
     version: main
   cranium/src/synapse_gz:
     type: git
@@ -19,15 +19,15 @@ repositories:
   cranium/src/synapse_msgs:
     type: git
     url: git@github.com:CogniPilot/synapse_msgs
-    version: main
+    version: pr-pwm
   cranium/src/synapse_protobuf:
     type: git
     url: git@github.com:CogniPilot/synapse_protobuf
-    version: main
+    version: pr-pwm
   cranium/src/synapse_ros:
     type: git
     url: git@github.com:CogniPilot/synapse_ros
-    version: main
+    version: pr-pwm
   cranium/src/synapse_tinyframe:
     type: git
     url: git@github.com:CogniPilot/synapse_tinyframe
@@ -38,7 +38,7 @@ repositories:
     version: main
   electrode/src/electrode:
     type: git
-    url: git@github.com:CogniPilot/electrode
+    url: git@github.com:ksommerkohrt/electrode.git
     version: main
   tools/src/cyecca:
     type: git
@@ -47,5 +47,5 @@ repositories:
   ws/cerebri:
     type: git
     url: git@github.com:CogniPilot/cerebri
-    version: main
+    version: pr-estimator-qtmr
 
