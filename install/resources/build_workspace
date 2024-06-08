@@ -51,16 +51,8 @@ while :; do
 done
 
 PS3=$'\n\e[2;33mEnter a platform (number) to build: \e[0m'
-select opt in b3rb elm4 rdd2; do
+select opt in rdd2; do
   case $opt in
-  b3rb)
-    robot=b3rb
-    echo -e "\e[2;32mBuilding platform b3rb.\n\e[0m"
-    break;;
-  elm4)
-    robot=elm4
-    echo -e "\e[2;32mBuilding platform elm4.\n\e[0m"
-    break;;
   rdd2)
     robot=rdd2
     echo -e "\e[2;32mBuilding platform rdd2.\n\e[0m"
@@ -73,7 +65,7 @@ done
 if [[ ${sshgit} == "y" ]]; then
   echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking helmet version, updating if needed.\e[0m"
   if [ ! -f ~/cognipilot/helmet/.git/HEAD ]; then
-    git clone -b $release git@github.com:Cognipilot/helmet.git
+    git clone -b $release git@github.com:ksommerkohrt/helmet.git
   elif ! grep -qF "$release" ~/cognipilot/helmet/.git/HEAD; then
     cd ~/cognipilot/helmet
     git checkout $release
@@ -91,7 +83,7 @@ if [[ ${sshgit} == "y" ]]; then
 elif [[ ${sshgit} == "n" ]]; then
   echo -e "\e[2;34mBUILD:\e[0m\e[2;32m Checking read only helmet version, updating if needed.\e[0m"
   if [ ! -f ~/cognipilot/helmet/.git/HEAD ]; then
-    git clone -b $release https://github.com/Cognipilot/helmet.git
+    git clone -b $release https://github.com/ksommerkohrt/helmet.git
   elif ! grep -qF "$release" ~/cognipilot/helmet/.git/HEAD; then
     cd ~/cognipilot/helmet
     git checkout $release
